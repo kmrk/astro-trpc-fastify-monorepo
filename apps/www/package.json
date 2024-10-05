@@ -1,0 +1,28 @@
+{
+  "name": "www",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@acme/api": "workspace:*",
+    "@acme/shared": "workspace:*",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/react": "^3.6.2",
+    "@trpc/client": "^10.45.2",
+    "astro": "^4.15.11"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tailwind-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*"
+  },
+  "prettier": "@acme/prettier-config"
+}

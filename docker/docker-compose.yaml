@@ -1,0 +1,45 @@
+networks:
+  local:
+    driver: bridge
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      local:
+
+    environment:
+      - POSTGRES_DB=acme
+      - POSTGRES_USER=acme
+      - POSTGRES_PASSWORD=acme
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      local:
+
+  caddy:
+    container_name: caddy
+    image: caddy:latest
+    restart: always
+    volumes:
+      - ./volumes/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./data/static:/srv/static
+    ports:
+      - '80:80'
+    depends_on:
+      - db
+      - adminer
+    networks:
+      local:

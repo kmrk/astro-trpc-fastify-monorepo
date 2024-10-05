@@ -1,0 +1,26 @@
+{
+  "name": "astro-trpc-drizzle",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:web": "bun run --cwd apps/www dev",
+    "dev:admin": "bun run --cwd apps/admin dev",
+    "db:sync": "bun run --cwd packages/db gen && bun run --cwd packages/db migrate",
+    "build:web": "pnpm --filter  web run build",
+    "build:admin": "pnpm  --filter admin run build"
+  },
+  "devDependencies": {
+    "@acme/prettier-config": "workspace:*",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "prettier": "@acme/prettier-config",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tooling/*"
+  ],
+  "packageManager": "bun@1.1.12"
+}
