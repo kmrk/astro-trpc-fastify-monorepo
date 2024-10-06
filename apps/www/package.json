@@ -12,6 +12,7 @@
   "dependencies": {
     "@acme/api": "workspace:*",
     "@acme/shared": "workspace:*",
+    "@acme/ui": "workspace:*",
     "@astrojs/check": "^0.9.3",
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.1",

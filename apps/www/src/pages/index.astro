@@ -4,6 +4,9 @@ import Card from '../components/Card.astro';
 import {x} from '@acme/shared';
 
 import Demo from "../components/Demo.tsx";
+
+
+import { Button } from "@acme/ui/button";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -39,7 +42,10 @@ import Demo from "../components/Demo.tsx";
     <h1>Welcome to {x} 
       <p class="shadow-md shadow-yellow-500 m-20 text-6xl font-bold text-cyan-400">A better workflow</p>
       <span class="text-gradient">Astro</span></h1>
+
     <Demo client:load />
+    <Button className="bg-yellow-500 text-black p-5 m-5 text-2xl" client:load>this is react button<Button/>
+
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
