@@ -9,7 +9,7 @@ const Demo = () => {
     setR(t + "");
   });
 
-  return <div>{r}</div>;
+  return <>{r}<div className="text-red-500 m-10 text-4xl ">TestTailWindInTsx</div> </>;
 };
 
 export default Demo;

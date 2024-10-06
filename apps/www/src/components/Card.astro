@@ -11,7 +11,8 @@ const { href, title, body } = Astro.props;
 import {client} from '../lib/client.ts';
 ---
 
-<li class="link-card">
+<li class="link-card font-red">
+  <div class="text-lg text-red">TestTailwind</div>
 	<a href={href}>
 		<h2>
       {title}
