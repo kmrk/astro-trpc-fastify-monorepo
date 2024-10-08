@@ -5,6 +5,7 @@ import Card from '../components/Card.astro';
 import {x} from '@acme/shared';
 import Demo from "../components/Demo.tsx";
 import { Button } from "@acme/ui/button";
+import Hello from "../components/Hello.vue";
 
 ---
 
@@ -43,6 +44,7 @@ import { Button } from "@acme/ui/button";
       <span class="text-gradient">Astro</span></h1>
 
     <Demo client:load />
+    <Hello client:load/>
     <Button className="bg-yellow-500 text-black p-5 m-5 text-2xl" client:load>this is react button<Button/>
 
 		<p class="instructions">

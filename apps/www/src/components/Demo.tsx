@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import { client } from "../lib/client";
 
 const Demo = () => {
   const [r, setR] = useState<string>("OldValue");
+
+  useEffect(()=>{
+    const runx= async ()=>{
+      const result = await client.list.query();
+      setR(result);
+    }
+    runx();
+  }, [])
+  
   client.list.query().then((t) => {
     console.log("gett:::", t);
     setR(t + "");
